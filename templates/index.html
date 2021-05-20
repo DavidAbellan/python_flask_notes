@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<html>
+ <head>
+   
+    <title>Flask</title>
+    <!--cargar css-->
+    <link rel="Stylesheet" href="{{url_for('static', filename='css/styles.css')}}"
+ </head>
+ <body>
+
+{#Esto es un comentario, no sale en el explorer#}
+       <h1>Hola mundo desde template</h1>
+       <h1>{{now}}</h1>
+
+       <ul>
+
+          <li> <a href="/">Inicio </a> </li>
+          <li> <a href="/leng">Lenguajes de programación </a> </li>
+          <li> <a href="{{url_for('contacto')}}">Contacto</a> </li>
+
+
+
+       </ul>
+       {% for item in lista%}
+
+       <p>{{loop.index}} {{item}}</p>
+
+       {% endfor %}
+       {% include 'lenguajes.html' %}
+
+ </body>
+
+</html>

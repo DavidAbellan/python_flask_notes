@@ -1,0 +1,66 @@
+<!--Bases de datos
+
+php my admin crear base de datos/ crear tabla /
+
+pip install flask-mysqldb
+
+main.py /////////
+
+from flask_mysqldb import MySQL 
+
+app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_USER']=
+app.config['MYSQL_PASSWORD']=
+app.config['MYSQL_DB']=
+
+mysql = MySQL(app)
+
+app.route('/insetar', methods =['GET','POST'])
+
+def_insertar():
+
+if request.method == 'POST' :
+    marca= request.form['marca'] <<<<< marca es name en el form 
+
+   cursor= mysql.connection.cursor()
+   cursor.execute(f"INSERT INTO....VALUES()....")
+   cursor.connection.commit()
+
+   <<<recoger los datos del cursor/no commit para recoger obviamente
+   coches = cursor.fetchall()
+
+
+
+
+<<<<FLASH mensajes
+
+from flask import Flask, redirect, url_for, render_template, request,flash
+
+se crea una clave secreta
+
+app.secret_key='clave_secreta'
+
+
+se crea
+flash('Ha insertado correctamente')
+
+{%with messages = get_flashed_massages()%}
+   {%if messages%}
+      {for message in messages}
+         {{message}}
+end for      
+end if
+end with 
+
+
+
+
+
+
+
+
+
+
+
+
+-->
